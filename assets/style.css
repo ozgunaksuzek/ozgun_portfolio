@@ -162,37 +162,37 @@ html, body { overflow-x: hidden; }
 /* 6) Safety: images always scale down */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 
-/* === iPhone SE / small-phone fixes === */
+/* === Small-phone fix (iPhone SE) === */
+
+/* 1) Skills grid → single column on very small screens */
 @media (max-width: 560px) {
-  /* 1) Skills grid → single column */
-  .skills { grid-template-columns: 1fr !important; }
-
-  /* 2) Let each skill card stack text (title on top, details below) */
-  .skill {
-    min-width: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .skill strong,
-  .skill span {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  /* 3) Break long tokens like “LeadershipStakeholders” */
-  .skill strong,
-  .skill span {
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    hyphens: auto;
-  }
-
-  /* 4) Slightly tighter padding so two cards don’t push the viewport */
-  .skill { padding: 12px 14px; }
-  .container { width: min(1100px, 94%); }
+  .skills { grid-template-columns: 1fr !important; gap: 10px !important; }
 }
 
-/* Safety: no sideways scroll on tiny screens */
-html, body { overflow-x: hidden; }
+/* 2) Skill card: stack text instead of two narrow columns */
+@media (max-width: 560px) {
+  .skill {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+    padding: 12px 14px !important;
+  }
+  .skill strong,
+  .skill span {
+    max-width: 100% !important;
+    text-align: left !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+  }
+}
 
+/* 3) Kill the late "fixed header" override + body offset */
+.site-header { position: sticky !important; top: 0 !important; }
+body { padding-top: 0 !important; }
+
+/* 4) Safety: no sideways scroll */
+html, body { overflow-x: hidden !important; }
