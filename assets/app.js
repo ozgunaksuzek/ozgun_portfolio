@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 24h live clock
   const clock = document.getElementById('clock');
   function fmt(n){ return n < 10 ? '0'+n : ''+n; }
+  function swap(to){
+  const de = (to==='de');
+  if(de){ apply(DE); langBtn.textContent='EN'; langBtn.setAttribute('aria-label','Switch to English'); }
+  else { apply(EN); langBtn.textContent='DE'; langBtn.setAttribute('aria-label','Switch to German'); }
+  langBtn.setAttribute('aria-pressed', String(de));
+  localStorage.setItem('lang', to); lang = to;
+}
+
   function tick(){
     const d = new Date();
     const t = `${fmt(d.getHours())}:${fmt(d.getMinutes())}:${fmt(d.getSeconds())}`;
