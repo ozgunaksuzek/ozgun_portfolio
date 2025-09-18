@@ -30,6 +30,22 @@ a{color:inherit;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:14px}
 .nav-links a{opacity:.9}.nav-links a:hover{opacity:1}
 
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;   /* keeps it above other content */
+  background: #0b0c0f; /* same dark background as your site */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4); /* optional subtle shadow */
+}
+
+/* Prevent content from being hidden under the header */
+body {
+  padding-top: 80px; /* adjust based on header height */
+}
+
+
 /* buttons */
 .btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px;
   font-weight:600;cursor:pointer;background:transparent;color:var(--text);transition:transform .15s ease, box-shadow .2s ease}
