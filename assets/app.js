@@ -172,6 +172,21 @@ document.addEventListener('DOMContentLoaded', () => {
     'resume.sk4':'Sprachen: Englisch (Fließend), Deutsch (B2), Türkisch (Muttersprache).'
   };
 
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#contact-form'); // update if your id/class differs
+    if (!form) return;
+  
+    // Reset if user returns via Back/Forward (bfcache restore)
+    window.addEventListener('pageshow', (e) => {
+      const navEntries = performance.getEntriesByType('navigation');
+      const backForward = navEntries[0]?.type === 'back_forward';
+      if (e.persisted || backForward) form.reset();
+    });
+  });
+  </script>
+
+  
   // i18n apply
   const i18nEls = [...document.querySelectorAll('[data-i18n]')];
   const langBtn = document.getElementById('langToggle');
