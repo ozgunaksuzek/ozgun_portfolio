@@ -159,39 +159,40 @@
       </div>
     </section>
 
+
     <!-- CONTACT -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <div class="card">
         <h2 class="section-title" id="contact-title" data-i18n="contact.title">Get in touch</h2>
-        <p class="muted" data-i18n="contact.blurb">Open to internships, working student roles, and junior positions in power electronics, embedded, or test engineering.</p>
-        <form
-          action="https://formspree.io/f/meolbbwd"
-          method="POST"
-        >
-          <label>
-            Your email:
-            <input type="email" name="email">
-          </label>
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
-          <!-- your other form fields go here -->
-          <button type="submit">Send</button>
-        </form>
-        <form name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
+        <p class="muted" data-i18n="contact.blurb">
+          Open to internships, working student roles, and junior positions in power electronics, embedded, or test engineering.
+        </p>
+    
+        <!-- Formspree Form -->
+        <form action="https://formspree.io/f/meolbbwd" method="POST">
           <div class="row">
-            <p><label data-i18n="contact.name">Name</label><br><input type="text" name="name" required></p>
-            <p><label data-i18n="contact.email">Email</label><br><input type="email" name="email" required></p>
+            <p>
+              <label data-i18n="contact.name">Name</label><br>
+              <input type="text" name="name" required>
+            </p>
+            <p>
+              <label data-i18n="contact.email">Email</label><br>
+              <input type="email" name="email" required>
+            </p>
           </div>
-          <p><label data-i18n="contact.msg">Message</label><br><textarea name="message" required></textarea></p>
+          <p>
+            <label data-i18n="contact.msg">Message</label><br>
+            <textarea name="message" required></textarea>
+          </p>
           <button class="btn primary" type="submit" data-i18n="contact.send">Send</button>
         </form>
       </div>
+    
       <div class="card">
         <h3 data-i18n="contact.quick">Quick info</h3>
-        <p class="muted" data-i18n="contact.quickDesc">Graz, Austria • Resident • Start: Immediately</p>
+        <p class="muted" data-i18n="contact.quickDesc">
+          Graz, Austria • Resident • Start: Immediately
+        </p>
         <div class="tags">
           <a class="tag" href="assets/CV1_Engineering.pdf" download data-i18n="contact.cvEng">CV — Engineering</a>
           <a class="tag" href="assets/CV2_PMP.pdf" download data-i18n="contact.cvPmp">CV — Project Management</a>
@@ -256,6 +257,7 @@
   <script src="assets/app.js"></script>
 </body>
 </html>
+
 
 
 
