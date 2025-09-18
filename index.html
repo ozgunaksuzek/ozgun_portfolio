@@ -1,148 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Özgün Aksüzek",
-    "jobTitle": "Project Manager & Electronics & Computer Engineer",
-    "url": "https://your-domain.com/",
-    "image": "https://your-domain.com/assets/profile.jpg",
-    "sameAs": [
-      "https://www.linkedin.com/in/ozgunaksuzek",
-      "https://www.credly.com/users/ozgun-aksuzek" 
-    ],
-    "knowsAbout": [
-      "Power Electronics","Embedded C","MSP430","ARM","RF/Analog","LTspice","Altium"
-    ],
-    "address": { "@type": "PostalAddress", "addressLocality": "Graz", "addressCountry": "AT" }
-  }
-  </script>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Özgün Aksüzek Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Özgün Aksüzek — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
-  <script defer src="assets/app.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">ÖA</div>
-    <nav class="nav">
-      <a href="#projects" data-i18n="nav.projects">Projects</a>
-      <a href="#experience" data-i18n="nav.experience">Experience</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
-      <a href="#resume" data-i18n="nav.resume">Resume</a>
-    </nav>
-    <div class="actions">
-      <a href="https://www.linkedin.com/in/ozgunaksuzek/" target="_blank">LinkedIn</a>
-      <button id="langToggle" class="btn ghost" aria-label="Switch to German" aria-pressed="false">DE</button>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="logo">ÖA</span>
+          <span class="brand-txt">
+            <strong>Özgün Aksüzek, PMP®, PMI-ACP®</strong>
+            <span class="muted small" data-i18n="header.subtitle">Project Manager & Electronics & Computer Engineer</span>
+            <span class="muted small"> · <span data-i18n="header.localtime">Local time</span>: <span id="clock">--:--</span></span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#experience" data-i18n="nav.experience">Experience</a>
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <button id="openResume" class="btn ghost" data-i18n="nav.resume" aria-haspopup="dialog">Resume</button>
+          <a class="btn" href="https://www.linkedin.com/in/ozgunaksuzek" target="_blank" rel="noreferrer">LinkedIn</a>
+          <button id="langToggle" class="btn ghost" aria-label="Switch language">DE</button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 data-i18n="hero.title">Power Electronics • Embedded Systems • Agile/PM</h1>
-    <p class="muted" data-i18n="hero.desc">
-      Project Manager & Electronics Engineer (PMP®, PMI-ACP®, PSM I) with 7+ years of telecom & airport systems experience.
-      Currently pursuing M.Sc. at FH Joanneum with focus on Power Electronics, Embedded-C (MSP430/ARM), RF/Analog.
-      Thesis: DCF-77 Receiver for FMCW Radar — from PCB design to firmware.
-    </p>
-    <div class="hero-links">
-      <a href="#projects" class="btn" data-i18n="hero.projects">See Projects</a>
-      <a href="mailto:ozgunaksuzek@gmail.com" class="btn ghost" data-i18n="hero.contact">Email Me</a>
-    </div>
-    <p class="muted small">📍 Graz, AT • LinkedIn</p>
-    <p class="muted small">Local time: <span id="clock">--:--</span></p>
-  </section>
-
-  <!-- HIGHLIGHTS -->
-  <section class="highlights">
-    <div class="card">
-      <h3 data-i18n="highlight.thesis">Current Thesis</h3>
-      <p>DCF-77 Receiver for FMCW Radar (HW + FW)</p>
-      <p>MSP430 • C • LTspice • Altium</p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="highlight.cert">Certifications</h3>
-      <ul>
-        <li><a href="https://www.credly.com/badges/899877e6-ee8e-41a6-8cc3-179bb7b090b6/linked_in_profile" target="_blank">PMP®</a></li>
-        <li><a href="https://www.credly.com/badges/72c2cd9a-72bf-49f1-a3ac-4b3482094a98/linked_in_profile" target="_blank">PMI-ACP®</a></li>
-        <li><a href="https://www.credly.com/badges/a67a0607-dc85-46ee-9c3f-4b770776b3a7?source=linked_in_profile" target="_blank">PSM I</a></li>
-        <li>IELTS</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 data-i18n="highlight.interests">Interests</h3>
-      <p>Power converters, Magnetics, RF/Analog, DSP, Measurement</p>
-    </div>
-    <div class="card">
-      <h3 data-i18n="highlight.languages">Languages</h3>
-      <p>English (Fluent), German (B2), Turkish (Native)</p>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2 data-i18n="projects.title">Featured Projects</h2>
-    <div class="projects">
-      <article class="project card">
-        <div class="thumb">
-          <img src="assets/projects/dcf77.png" alt="DCF-77 Receiver for FMCW Radar">
-        </div>
-        <h3 data-i18n="prj.dcf.title">DCF-77 Receiver for FMCW Radar</h3>
-        <p class="muted" data-i18n="prj.dcf.desc">
-          RF/analog front-end + MSP430 C firmware decoding 60-bit time data; automatic RTC sync for embedded radar. PCB in Altium.
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title" data-i18n="hero.title">Power Electronics • Embedded Systems • Agile/PM</h1>
+        <p data-i18n="hero.summary">
+          Electronics/embedded engineer & certified project manager (PMP®, PMI-ACP®, PSM I) with 7+ years in telecom and airport systems. Now pursuing an M.Sc. in Electronics & Computer Engineering at FH Joanneum, focusing on power electronics, embedded C (MSP430/ARM), and RF/analog. Current thesis: building a DCF-77 receiver for FMCW radar — from PCB design to firmware.
         </p>
-        <div class="tags">
-          <span class="tag">MSP430</span><span class="tag">C</span><span class="tag">Altium</span><span class="tag">RF/Analog</span>
+        <div class="cta">
+          <a class="btn primary" href="#projects" data-i18n="hero.ctaProjects">See Projects</a>
+          <a class="btn ghost" href="mailto:ozgunaksuzek@gmail.com" data-i18n="hero.ctaEmail">Email Me</a>
         </div>
-      </article>
-
-      <article class="project card">
-        <div class="thumb">
-          <img src="assets/projects/resonant.png" alt="Series/Bidirectional Resonant Converter">
-        </div>
-        <h3 data-i18n="prj.res.title">Series/Bidirectional Resonant Converter</h3>
-        <p class="muted" data-i18n="prj.res.desc">
-          LTspice modeling of resonant topologies (ZVS/ZCS), transformer design with Litz wire, prototype build and performance analysis.
+        <p class="muted small hero-meta">
+          <span data-i18n="hero.location">Based in Graz, AT</span>
+          • <a href="https://www.linkedin.com/in/ozgunaksuzek" target="_blank" rel="noreferrer">LinkedIn</a>
         </p>
+      </div>
+
+      <!-- highlight cards -->
+      <aside class="hero-card">
+        <div class="hero-grid">
+          <div class="card">
+            <strong data-i18n="hero.thesisTitle">Current Thesis</strong>
+            <p class="muted" data-i18n="hero.thesisDesc">DCF-77 Receiver for FMCW Radar (HW + FW)</p>
+            <div class="tags">
+              <span class="tag">MSP430</span><span class="tag">C</span><span class="tag">LTspice</span><span class="tag">Altium</span>
+            </div>
+          </div>
+          <div class="card">
+            <strong data-i18n="hero.certsTitle">Certifications</strong>
+            <p class="muted" data-i18n="hero.certsDesc">PMP®, PMI-ACP®, PSM I, IELTS</p>
+            <div class="tags">
+              <a class="tag" href="https://www.credly.com/badges/899877e6-ee8e-41a6-8cc3-179bb7b090b6/linked_in_profile" target="_blank" rel="noreferrer">PMP</a>
+              <a class="tag" href="https://www.credly.com/badges/72c2cd9a-72bf-49f1-a3ac-4b3482094a98/linked_in_profile" target="_blank" rel="noreferrer">PMI-ACP</a>
+              <a class="tag" href="https://www.credly.com/badges/a67a0607-dc85-46ee-9c3f-4b770776b3a7?source=linked_in_profile" target="_blank" rel="noreferrer">PSM I</a>
+              <span class="tag">IELTS</span>
+            </div>
+          </div>
+          <div class="card">
+            <strong data-i18n="hero.interestsTitle">Interests</strong>
+            <p class="muted" data-i18n="hero.interestsDesc">Power converters, magnetics, RF/analog, DSP, test & measurement</p>
+          </div>
+          <div class="card">
+            <strong data-i18n="hero.langTitle">Languages</strong>
+            <p class="muted" data-i18n="hero.langDesc">English (Fluent), German (B2), Turkish (Native)</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title" data-i18n="projects.title">Featured Projects</h2>
+      <div class="projects">
+        <article class="project card">
+          <div class="thumb"><img src="assets/Code_slash.svg" alt=""></div>
+          <h3 data-i18n="prj.dcf.title">DCF-77 Receiver for FMCW Radar</h3>
+          <p class="muted" data-i18n="prj.dcf.desc">RF/analog front-end + MSP430 C firmware decoding 60-bit time data; automatic RTC sync for embedded radar. PCB in Altium.</p>
+          <div class="tags"><span class="tag">MSP430</span><span class="tag">C</span><span class="tag">Altium</span><span class="tag">RF/Analog</span></div>
+        </article>
+
+        <article class="project card">
+          <div class="thumb"><img src="assets/usb.svg" alt=""></div>
+          <h3 data-i18n="prj.res.title">Series/Bidirectional Resonant Converter</h3>
+          <p class="muted" data-i18n="prj.res.desc">LTspice modeling of resonant topologies (ZVS/ZCS), transformer design with Litz wire, prototype build and performance analysis.</p>
+          <div class="tags"><span class="tag">LTspice</span><span class="tag">Power Electronics</span><span class="tag">Magnetics</span></div>
+        </article>
+
+        <article class="project card">
+          <div class="thumb"><img src="assets/briefcase fill.svg" alt=""></div>
+          <h3 data-i18n="prj.pwm.title">PWM via Memory-Mapped GPIO (Zybo)</h3>
+          <p class="muted" data-i18n="prj.pwm.desc">Compared kernel GPIO vs. MMIO for PWM; measured jitter & clock precision under system load; integrated with RTC example.</p>
+          <div class="tags"><span class="tag">ARM</span><span class="tag">C</span><span class="tag">Perf</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="exp-title">
+      <h2 class="section-title" id="exp-title" data-i18n="exp.title">Experience</h2>
+      <div class="timeline">
+        <div class="entry card">
+          <h4 data-i18n="exp.tt.title">Project Manager — Türk Telekom</h4>
+          <div class="where" data-i18n="exp.tt.time">Jun 2022 – Aug 2023 • PMO</div>
+          <ul>
+            <li data-i18n="exp.tt.b1">Directed multiple technical projects; improved workflows and reduced operational costs ~20%.</li>
+            <li data-i18n="exp.tt.b2">Agile practices to enhance team productivity and delivery.</li>
+            <li data-i18n="exp.tt.b3">Led nationwide rollout of 60+ EV charging stations; coordinated vendors; QR-payment integration.</li>
+          </ul>
+        </div>
+        <div class="entry card">
+          <h4 data-i18n="exp.iga.pm.title">Special Airport System Project Manager — İGA İstanbul Airport</h4>
+          <div class="where" data-i18n="exp.iga.pm.time">May 2019 – Jun 2022</div>
+          <ul>
+            <li data-i18n="exp.iga.pm.b1">Oversaw mission-critical airport systems; downtime reduced ~15% via proactive testing.</li>
+            <li data-i18n="exp.iga.pm.b2">Vendor/contract management for large-scale deployments.</li>
+            <li data-i18n="exp.iga.pm.b3">Projects: VDGS and Passenger Boarding Bridges (PBB) installation & integration.</li>
+          </ul>
+        </div>
+        <div class="entry card">
+          <h4 data-i18n="exp.iga.eng.title">Special Airport System Engineer — İGA İstanbul Airport</h4>
+          <div class="where" data-i18n="exp.iga.eng.time">Apr 2017 – May 2019</div>
+          <ul>
+            <li data-i18n="exp.iga.eng.b1">Designed/optimized electrical schematics for real-time monitoring systems (↑ accuracy ~25%).</li>
+            <li data-i18n="exp.iga.eng.b2">Cross-functional collaboration with HW/SW teams to deploy secure systems.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title" data-i18n="skills.title">Skills</h2>
+      <div class="skills">
+        <div class="skill"><strong data-i18n="skills.power">Power Electronics</strong><span data-i18n="skills.powerDesc">Resonant, magnetics, isolation</span></div>
+        <div class="skill"><strong data-i18n="skills.embed">Embedded C</strong><span data-i18n="skills.embedDesc">MSP430, ARM, RTC/GPIO/PWM</span></div>
+        <div class="skill"><strong data-i18n="skills.edasim">EDA & Simulation</strong><span data-i18n="skills.edasimDesc">Altium, OrCAD, LTspice</span></div>
+        <div class="skill"><strong data-i18n="skills.rf">RF/Analog</strong><span data-i18n="skills.rfDesc">Op-amps, filters, comparators</span></div>
+        <div class="skill"><strong data-i18n="skills.pm">Project Management</strong><span data-i18n="skills.pmDesc">PMP, PMI-ACP, Scrum</span></div>
+        <div class="skill"><strong data-i18n="skills.lead">Leadership</strong><span data-i18n="skills.leadDesc">Stakeholders, vendors, PMO</span></div>
+        <div class="skill"><strong data-i18n="skills.soft">Soft Skills</strong><span data-i18n="skills.softDesc">Communication, teamwork</span></div>
+        <div class="skill"><strong data-i18n="skills.langs">Languages</strong><span data-i18n="skills.langsDesc">EN (Fluent), DE (B2), TR</span></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="card">
+        <h2 class="section-title" id="contact-title" data-i18n="contact.title">Get in touch</h2>
+        <p class="muted" data-i18n="contact.blurb">Open to internships, working student roles, and junior positions in power electronics, embedded, or test engineering.</p>
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="row">
+            <p><label data-i18n="contact.name">Name</label><br><input type="text" name="name" required></p>
+            <p><label data-i18n="contact.email">Email</label><br><input type="email" name="email" required></p>
+          </div>
+          <p><label data-i18n="contact.msg">Message</label><br><textarea name="message" required></textarea></p>
+          <button class="btn primary" type="submit" data-i18n="contact.send">Send</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3 data-i18n="contact.quick">Quick info</h3>
+        <p class="muted" data-i18n="contact.quickDesc">Graz, Austria • Resident • Start: Immediately</p>
         <div class="tags">
-          <span class="tag">LTspice</span><span class="tag">Power Electronics</span><span class="tag">Magnetics</span>
+          <a class="tag" href="assets/CV1_Engineering.pdf" download data-i18n="contact.cvEng">CV — Engineering</a>
+          <a class="tag" href="assets/CV2_PMP.pdf" download data-i18n="contact.cvPmp">CV — Project Management</a>
         </div>
-      </article>
+      </div>
+    </section>
+  </main>
 
-      <article class="project card">
-        <div class="thumb">
-          <img src="assets/projects/pwm.png" alt="PWM via Memory-Mapped GPIO (Zybo)">
-        </div>
-        <h3 data-i18n="prj.pwm.title">PWM via Memory-Mapped GPIO (Zybo)</h3>
-        <p class="muted" data-i18n="prj.pwm.desc">
-          Compared kernel GPIO vs. MMIO for PWM; measured jitter & clock precision under system load; integrated with RTC example.
-        </p>
-        <div class="tags">
-          <span class="tag">ARM</span><span class="tag">C</span><span class="tag">Perf</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- RESUME -->
-  <section id="resume" class="section">
-    <h2 data-i18n="resume.title">Resume</h2>
-    <div class="card">
-      <p>📄 <a href="assets/cv/CV1_Engineering.pdf" download>Download Engineering CV</a></p>
-      <p>📄 <a href="assets/cv/CV2_PMP.pdf" download>Download Project Management CV</a></p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 Özgün Aksüzek • Multilingual Portfolio</p>
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Özgün Aksüzek • Multilingual Portfolio</div>
   </footer>
+
+  <!-- Resume Modal -->
+  <dialog id="resumeModal" aria-labelledby="resumeTitle">
+    <button class="close" aria-label="Close">×</button>
+    <div class="resume">
+      <aside class="resume-aside">
+        <h2 id="resumeTitle" data-i18n="resume.title">Resume</h2>
+        <p class="muted" data-i18n="resume.subtitle">Electronics & Computer Engineering (M.Sc.)</p>
+        <hr>
+        <p><strong data-i18n="resume.contact">Contact</strong><br>
+          <a href="mailto:ozgunaksuzek@gmail.com">ozgunaksuzek@gmail.com</a><br> Graz, Austria
+        </p>
+        <p><strong data-i18n="resume.links">Links</strong><br>
+          <a href="https://www.linkedin.com/in/ozgunaksuzek" target="_blank" rel="noreferrer">LinkedIn</a>
+        </p>
+        <p><strong data-i18n="resume.certs">Certifications</strong></p>
+        <div class="tags">
+          <a class="tag" href="https://www.credly.com/badges/899877e6-ee8e-41a6-8cc3-179bb7b090b6/linked_in_profile" target="_blank" rel="noreferrer">PMP</a>
+          <a class="tag" href="https://www.credly.com/badges/72c2cd9a-72bf-49f1-a3ac-4b3482094a98/linked_in_profile" target="_blank" rel="noreferrer">PMI-ACP</a>
+          <a class="tag" href="https://www.credly.com/badges/a67a0607-dc85-46ee-9c3f-4b770776b3a7?source=linked_in_profile" target="_blank" rel="noreferrer">PSM I</a>
+          <span class="tag">IELTS</span>
+        </div>
+      </aside>
+      <section class="resume-main">
+        <h3 data-i18n="resume.profileTitle">Profile</h3>
+        <p data-i18n="resume.profile">
+          Certified PMP®, PMI-ACP®, and Scrum Master with 7+ years leading technical projects in telecom and airport systems. Currently advancing an M.Sc. in Electronics & Computer Engineering, bridging project leadership with power electronics, embedded C, and RF/analog design.
+        </p>
+        <h3 data-i18n="resume.eduTitle">Education</h3>
+        <ul>
+          <li data-i18n="resume.edu1"><strong>FH Joanneum</strong> — M.Sc. Electronics & Computer Engineering (Aug 2023 – Present)</li>
+          <li data-i18n="resume.edu2"><strong>Yildiz Technical University</strong> — MBA (2018 – 2020)</li>
+          <li data-i18n="resume.edu3"><strong>Sakarya University</strong> — B.Sc. Electrical & Electronic Engineering (2008 – 2014)</li>
+        </ul>
+        <h3 data-i18n="resume.projectsTitle">Projects</h3>
+        <ul>
+          <li data-i18n="resume.pr1"><strong>DCF-77 Receiver</strong>: RF receiver + MSP430 firmware for embedded radar RTC synchronization.</li>
+          <li data-i18n="resume.pr2"><strong>Series/Bidirectional Resonant Converter</strong>: LTspice simulations, transformer design, prototype and performance evaluation.</li>
+        </ul>
+        <h3 data-i18n="resume.skillsTitle">Skills</h3>
+        <ul>
+          <li data-i18n="resume.sk1">Power Electronics, Embedded C (MSP430/ARM), RF/Analog design.</li>
+          <li data-i18n="resume.sk2">EDA/Simulation: Altium, OrCAD, LTspice; MATLAB/Simulink; Python; VHDL.</li>
+          <li data-i18n="resume.sk3">Project Management: PMP®, PMI-ACP®, Scrum; Risk, PMO reporting; Stakeholder & Vendor management.</li>
+          <li data-i18n="resume.sk4">Languages: English (Fluent), German (B2), Turkish (Native).</li>
+        </ul>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
