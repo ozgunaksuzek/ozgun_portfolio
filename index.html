@@ -164,6 +164,21 @@
       <div class="card">
         <h2 class="section-title" id="contact-title" data-i18n="contact.title">Get in touch</h2>
         <p class="muted" data-i18n="contact.blurb">Open to internships, working student roles, and junior positions in power electronics, embedded, or test engineering.</p>
+        <form
+          action="https://formspree.io/f/meolbbwd"
+          method="POST"
+        >
+          <label>
+            Your email:
+            <input type="email" name="email">
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
         <form name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <div class="row">
@@ -241,6 +256,7 @@
   <script src="assets/app.js"></script>
 </body>
 </html>
+
 
 
 
